@@ -17,9 +17,10 @@ app.set('views', './views'); // Specify the directory where your templates are l
 
 // get routes
 app.get('/', (req, res) => res.render('index'));
+
 app.get('/user/:userId', async (req, res) => {
   const userId = req.params.userId;
-  const user = await getUserById(userId);  // Replace with your actual data retrieval logic
+  const user = await getUserById(userId);
 
   res.render('user', { user }); // Render the EJS template with the user data
 });
